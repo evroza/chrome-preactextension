@@ -1,27 +1,6 @@
-# Preact Boilerplate / Starter Kit
-
-[![Build Status](https://travis-ci.org/developit/preact-boilerplate.svg?branch=master)](https://travis-ci.org/developit/preact-boilerplate)
-[![gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/developit/preact)
+# Chrome Extension with Preact
 
 > :guitar: Ready-to-rock [Preact] starter project, powered by [webpack].
->
-> :rocket: If you're starting a new project using [Preact], you've come to the right place.
-Below is a step-by-step guide that takes you straight from downloading this boilerplate to production.
->
-> **[:boom: View Demo :boom:](https://preact-boilerplate.surge.sh)**
-
-
----
-
-
-# Quick-Start Guide
-
-- [Installation](#installation)
-- [Development Workflow](#development-workflow)
-- [Structure](#structure)
-- [CSS Modules](#css-modules)
-- [Handling URLS](#handling-urls)
-- [React Compatibility](#react-compatibility)
 
 
 ## Installation
@@ -29,10 +8,9 @@ Below is a step-by-step guide that takes you straight from downloading this boil
 **1. Clone this repo:**
 
 ```sh
-git clone --depth 1 https://github.com/developit/preact-boilerplate.git my-app
-cd my-app
+git clone --depth 1 https://github.com/evroza/chrome-preactextension chrome-preact
+cd chrome-preact
 ```
-
 
 **2. Make it your own:**
 
@@ -48,9 +26,6 @@ rm -rf .git && git init && npm init
 ```sh
 npm install
 ```
-
-> You're done installing! Now let's get started developing.
-
 
 
 ## Development Workflow
@@ -68,24 +43,12 @@ npm run dev
 
 ```sh
 npm test
-```
-
-> 🌟 This also instruments the code in `src/` using [isparta](https://github.com/douglasduteil/isparta), giving you pretty code coverage statistics at the end of your tests! If you want to see detailed coverage information, a full HTML report is placed into `coverage/`.
 
 **6. Generate a production build in `./build`:**
 
 ```sh
 npm run build
 ```
-
-> You can now deploy the contents of the `build` directory to production!
->
-> **[Surge.sh](https://surge.sh) Example:** `surge ./build -d my-app.surge.sh`
-> 
-> **[Netlify](https://www.netlify.com/docs/cli/) Example:** `netlify deploy`
->
-> [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/developit/preact-boilerplate)
-
 
 **5. Start local production server with [serve](https://github.com/zeit/serve):**
 
@@ -95,23 +58,15 @@ npm start
 
 > This is to simulate a production (CDN) server with gzip. It just serves up the contents of `./build`.
 
-
-
 ---
 
 
 ## Structure
 
-Apps are built up from simple units of functionality called Components. A Component is responsible for rendering a small part of an application, given some input data called `props`, generally passed in as attributes in JSX. A component can be as simple as:
+This extension uses the preact boiler-plate code available at [Preact repo](https://github.com/developit/preact)
 
-```js
-class Link extends Component {
-  render({ to, children }) {
-    return <a href={ to }>{ children }</a>;
-  }
-}
-// usage:
-<Link to="/">Home</Link>
+I've revised the structure and added an extra 'muscle' directory to hold the back-ground and content script. In production they shall all be available from the 'build' dicrectory and that will carry our installable extension
+
 ```
 
 
@@ -178,6 +133,3 @@ This project includes [preact-compat] alias in as `react` and `react-dom` right 
 MIT
 
 
-[Preact]: https://github.com/developit/preact
-[preact-compat]: https://github.com/developit/preact-compat
-[webpack]: https://webpack.github.io
